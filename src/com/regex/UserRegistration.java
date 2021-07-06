@@ -16,7 +16,8 @@ public class UserRegistration {
 				+ "4. Enter the Valid Phone Number\n"
 				+ "5. Pass Word Rule 1\n"
 				+ "6. Pass Word Rule 2\n"
-				+ "7. Pass Word Rule 2\n");
+				+ "7. Pass Word Rule 3\n"
+				+ "8. Pass Word Rule 4\n");
 
 		int option = sc.nextInt();
 		System.out.println();
@@ -127,14 +128,14 @@ public class UserRegistration {
 				System.out.println("Pass Word is Invalid");
 			break;
 			
-			//Check Password Rule 2
+			//Check Password Rule 3
 			
 		case 7:
 			Scanner sc7 = new Scanner(System.in);
 			System.out.println("Enter the PassWord");
-			String passWord2 = sc7.nextLine();
+			String passWord2 = sc7.next();
 
-			String regex6 = "^[A-Z]{1}+[a-zA-Z0-9]{8,}$";
+			String regex6 = "^[A-Z]{1}+[a-zA-Z].+[0-9].+{8,}$";
 
 			Pattern p6 = Pattern.compile(regex6);
 			Matcher m6 = p6.matcher(passWord2);
@@ -145,7 +146,26 @@ public class UserRegistration {
 				System.out.println("Pass Word is Invalid");
 			break;
 			
+			//Check Password Rule 4
 			
+		case 8:
+			Scanner sc8 = new Scanner(System.in);
+			System.out.println("Enter the PassWord");
+			String passWord3 = sc8.next();
+
+			String regex7 = "^[A-Z]{1}+[a-zA-Z].*[@#$%^&*._+=].*[0-9].*{8,}$";
+
+
+			Pattern p7 = Pattern.compile(regex7);
+			Matcher m7 = p7.matcher(passWord3);
+			boolean r7 = m7.matches();
+			if (r7)
+				System.out.println("Pass Word is Valid");
+			else
+				System.out.println("Pass Word is Invalid");
+			break;
+			
+	
 			}
 	}
 }
