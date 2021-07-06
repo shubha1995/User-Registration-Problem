@@ -13,7 +13,8 @@ public class UserRegistration {
 				+ "1. Enter the First Name\n"
 				+ "2. Enter the Last Name\n"
 				+ "3. Enter the Email Address\n"
-				+ "4. Enter the Valid Phone Number");
+				+ "4. Enter the Valid Phone Number\n"
+				+ "5. Pass Word Rule 1");
 
 		int option = sc.nextInt();
 		System.out.println();
@@ -81,6 +82,22 @@ public class UserRegistration {
 				System.out.println("Phone No. is Valid");
 			else
 				System.out.println("Phone No. is Invalid");
+			break;
+			
+		case 5:
+			Scanner sc5 = new Scanner(System.in);
+			System.out.println("Enter the Phone No.");
+			String passWord = sc5.nextLine();
+
+			String regex4 = "^[0-9]{8,}$";
+
+			Pattern p4 = Pattern.compile(regex4);
+			Matcher m4 = p4.matcher(passWord);
+			boolean r4 = m4.matches();
+			if (r4)
+				System.out.println("Pass Word is Valid");
+			else
+				System.out.println("Pass Word is Invalid");
 			break;
 			
 			}
