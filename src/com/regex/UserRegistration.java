@@ -15,7 +15,8 @@ public class UserRegistration {
 				+ "3. Enter the Email Address\n"
 				+ "4. Enter the Valid Phone Number\n"
 				+ "5. Pass Word Rule 1\n"
-				+ "6. Pass Word Rule 2\n");
+				+ "6. Pass Word Rule 2\n"
+				+ "7. Pass Word Rule 2\n");
 
 		int option = sc.nextInt();
 		System.out.println();
@@ -94,10 +95,10 @@ public class UserRegistration {
 			
 		case 5:
 			Scanner sc5 = new Scanner(System.in);
-			System.out.println("Enter the Phone No.");
+			System.out.println("Enter the PassWord");
 			String passWord = sc5.nextLine();
 
-			String regex4 = "^[a-zA-z0-9]{8,}$";
+			String regex4 = "^[a-zA-Z0-9]{8,}$";
 
 			Pattern p4 = Pattern.compile(regex4);
 			Matcher m4 = p4.matcher(passWord);
@@ -112,15 +113,33 @@ public class UserRegistration {
 			
 		case 6:
 			Scanner sc6 = new Scanner(System.in);
-			System.out.println("Enter the Phone No.");
+			System.out.println("Enter the PassWord");
 			String passWord1 = sc6.nextLine();
 
-			String regex5 = "^[A-Z]{1}+[a-zA-z0-9]{8,}$";
+			String regex5 = "^[A-Z]{1}+[a-zA-Z0-9]{8,}$";
 
 			Pattern p5 = Pattern.compile(regex5);
 			Matcher m5 = p5.matcher(passWord1);
 			boolean r5 = m5.matches();
 			if (r5)
+				System.out.println("Pass Word is Valid");
+			else
+				System.out.println("Pass Word is Invalid");
+			break;
+			
+			//Check Password Rule 2
+			
+		case 7:
+			Scanner sc7 = new Scanner(System.in);
+			System.out.println("Enter the PassWord");
+			String passWord2 = sc7.nextLine();
+
+			String regex6 = "^[A-Z]{1}+[a-zA-Z0-9]{8,}$";
+
+			Pattern p6 = Pattern.compile(regex6);
+			Matcher m6 = p6.matcher(passWord2);
+			boolean r6 = m6.matches();
+			if (r6)
 				System.out.println("Pass Word is Valid");
 			else
 				System.out.println("Pass Word is Invalid");
