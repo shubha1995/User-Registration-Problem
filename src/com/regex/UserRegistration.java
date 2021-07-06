@@ -12,7 +12,8 @@ public class UserRegistration {
 				+ "Choose your option:\n"
 				+ "1. Enter the First Name\n"
 				+ "2. Enter the Last Name\n"
-				+ "3. Enter the Email Address\n");
+				+ "3. Enter the Email Address\n"
+				+ "4. Enter the Valid Phone Number");
 
 		int option = sc.nextInt();
 		System.out.println();
@@ -66,7 +67,22 @@ public class UserRegistration {
 				System.out.println("Email Address is Invalid");
 			break;
 			
+		case 4:
+			Scanner sc4 = new Scanner(System.in);
+			System.out.println("Enter the Phone No.");
+			String phoneNo = sc4.nextLine();
 
-		}
+			String regex3 = "^[0-9]{2}\\s{0,1}[0-9]{10}$";
+
+			Pattern p3 = Pattern.compile(regex3);
+			Matcher m3 = p3.matcher(phoneNo);
+			boolean r3 = m3.matches();
+			if (r3)
+				System.out.println("Phone No. is Valid");
+			else
+				System.out.println("Phone No. is Invalid");
+			break;
+			
+			}
 	}
 }
