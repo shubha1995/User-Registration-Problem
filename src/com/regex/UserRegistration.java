@@ -134,7 +134,7 @@ public class UserRegistration {
 			System.out.println("Enter the PassWord");
 			String passWord2 = sc7.nextLine();
 
-			String regex6 = "^[A-Z]{1}+[a-zA-Z].+[0-9].+{8,}$";
+			String regex6 = "^[A-Z]{1}+[a-zA-Z].+[0-9].*{8,}$";
 
 			Pattern p6 = Pattern.compile(regex6);
 			Matcher m6 = p6.matcher(passWord2);
