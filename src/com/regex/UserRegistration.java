@@ -14,12 +14,13 @@ public class UserRegistration {
 				+ "2. Enter the Last Name\n"
 				+ "3. Enter the Email Address\n"
 				+ "4. Enter the Valid Phone Number\n"
-				+ "5. Pass Word Rule 1");
+				+ "5. Pass Word Rule 1\n"
+				+ "6. Pass Word Rule 2\n");
 
 		int option = sc.nextInt();
 		System.out.println();
 		switch (option) {
-
+		//Check First Name
 		case 1:
 			Scanner sc1 = new Scanner(System.in);
 			System.out.println("Enter the First Name");
@@ -35,7 +36,8 @@ public class UserRegistration {
 			else
 				System.out.println("Last name is Invalid");
 			break;
-
+			
+			//Check Last Name
 		case 2:
 			Scanner sc2 = new Scanner(System.in);
 			System.out.println("Enter the Last Name");
@@ -51,6 +53,8 @@ public class UserRegistration {
 			else
 				System.out.println("Last name is Invalid");
 			break;
+			
+			//Check Email Address
 			
 		case 3:
 			Scanner sc3 = new Scanner(System.in);
@@ -68,6 +72,8 @@ public class UserRegistration {
 				System.out.println("Email Address is Invalid");
 			break;
 			
+			//Check Phone No.
+			
 		case 4:
 			Scanner sc4 = new Scanner(System.in);
 			System.out.println("Enter the Phone No.");
@@ -84,12 +90,14 @@ public class UserRegistration {
 				System.out.println("Phone No. is Invalid");
 			break;
 			
+			//Check Password Rule 1
+			
 		case 5:
 			Scanner sc5 = new Scanner(System.in);
 			System.out.println("Enter the Phone No.");
 			String passWord = sc5.nextLine();
 
-			String regex4 = "^[0-9]{8,}$";
+			String regex4 = "^[a-zA-z0-9]{8,}$";
 
 			Pattern p4 = Pattern.compile(regex4);
 			Matcher m4 = p4.matcher(passWord);
@@ -99,6 +107,25 @@ public class UserRegistration {
 			else
 				System.out.println("Pass Word is Invalid");
 			break;
+			
+			//Check Password Rule 2
+			
+		case 6:
+			Scanner sc6 = new Scanner(System.in);
+			System.out.println("Enter the Phone No.");
+			String passWord1 = sc6.nextLine();
+
+			String regex5 = "^[A-Z]{1}+[a-zA-z0-9]{8,}$";
+
+			Pattern p5 = Pattern.compile(regex5);
+			Matcher m5 = p5.matcher(passWord1);
+			boolean r5 = m5.matches();
+			if (r5)
+				System.out.println("Pass Word is Valid");
+			else
+				System.out.println("Pass Word is Invalid");
+			break;
+			
 			
 			}
 	}
